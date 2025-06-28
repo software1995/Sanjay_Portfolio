@@ -296,7 +296,7 @@ export const education = [
   {
     "id": 0,
     // "img": "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/Kiit.jpeg?alt=media&token=3839d520-c59d-4341-ad8f-0980c98de4dd",
-    "img": "../components/assets/school-20-64.png",
+    "img": "../components/assets/school.jpg",
     "school": "Dr. A.P.J. Abdul Kalam Technical University",
     "date": "July 2017 - Sep 2021",
     "grade": "7.53 CGPA",
@@ -306,7 +306,7 @@ export const education = [
   {
     id: 1,
     // img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/methodist.png?alt=media&token=018a1b18-e2dd-4f34-8855-cff1b6b69fd3",
-    "img": "../components/assets/school-20-64.png",
+    "img": "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/school-20-64.png",
     school: "Senior Secondary: SJ P Sharma Inter College, UP (Board)",
     date: "July 2013 - June 2015",
     grade: "76.8%",
@@ -315,7 +315,7 @@ export const education = [
   },
   {
     id: 2,
-    "img": "../components/assets/school-20-64.png",
+    "img": "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/school-20-64.png",
     school: "Lat Hari Prasad Singraur R.S. High School, UP (Board) ",
     date: "Apr 2013 - Apr 2015",
     grade: ": 74.5%",
