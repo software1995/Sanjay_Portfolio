@@ -295,7 +295,8 @@ export const experiences = [
 export const education = [
   {
     "id": 0,
-    "img": "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/Kiit.jpeg?alt=media&token=3839d520-c59d-4341-ad8f-0980c98de4dd",
+    // "img": "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/Kiit.jpeg?alt=media&token=3839d520-c59d-4341-ad8f-0980c98de4dd",
+    "img": "../components/assets/Engineeing.png",
     "school": "Dr. A.P.J. Abdul Kalam Technical University",
     "date": "July 2017 - Sep 2021",
     "grade": "7.53 CGPA",
@@ -304,7 +305,8 @@ export const education = [
   },
   {
     id: 1,
-    img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/methodist.png?alt=media&token=018a1b18-e2dd-4f34-8855-cff1b6b69fd3",
+    // img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/methodist.png?alt=media&token=018a1b18-e2dd-4f34-8855-cff1b6b69fd3",
+    "img": "../components/assets/Engineeing.png",
     school: "Senior Secondary: SJ P Sharma Inter College, UP (Board)",
     date: "July 2013 - June 2015",
     grade: "76.8%",
@@ -465,23 +467,23 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Buckoid",
-    date: "Dec 2021 - Apr 2022",
+    title: "ClickNTokk",
+    date: "Fab 2024 - Mar 2024",
     description:
-      "App Is Currently In Playstore 100+ Downloads. This Project proposes an “Expense Tracking App”. Keep track of your personal expenses and compare them to your monthly income with the budget planner. It has Google Drive Cloud API for Backup of User Room Database. Made with Kotlin in MVVM Architecture & Live Data.",
+      "Frontend Development and Feature Implementation:- Spearheaded the creation of ClickNTokk using React Native,integrating a wide range of features such as video/photo sharing, messaging, voice communication, tagging, referrals,KYC, reels, comments, likes/dislikes, notifications, activity tracking, status updates, follow/unfollow, and advanced search functionalities. User Experience and Interface Design:-Designed a sleek, user-friendly interface with intuitive navigation, ensuring optimal performance across various devices for a consistent and engaging user experience Technology and Innovation: Utilized React Native for the frontend and Django with MongoDB for the backend to build robust systems supporting real-time interactions and secure data management. Enhanced user engagement with innovative elements like reels and advanced search capabilities.",
     image:
       "https://camo.githubusercontent.com/fbf405040ae86b5d4a40f24e4ac034982cb8c0e2d850560ba64527997b258be8/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f6c6f67696e2d65613565322e61707073706f742e636f6d2f6f2f4255434b4f49442532302831292e706e673f616c743d6d6564696126746f6b656e3d32653735376235372d323964372d346263612d613562322d653164346538313432373435",
-    tags: ["Kotlin", "MVVM", "Room Database", "Google Drive Cloud API"],
+    tags: ["React Native", "REST APIs", "Redux", "Axios", "Postman", "JSON", "Firebase", "Google Cloude Console", "App Store", "Android Studio"],
     category: "android app",
-    github: "https://github.com/rishavchanda/Buckoid-Android-App",
+    github: "https://play.google.com/store/apps/details?id=com.click_n_tokk",
     webapp: "https://play.google.com/store/apps/details?id=com.rishav.buckoid",
   },
   {
     id: 10,
-    title: "Job Finding App",
+    title: "CNPRealstate App",
     date: "Jun 2023 - Jul 2023",
     description:
-      "A Job Finding App made with React Native, Axios. Users can search for any job coming from API and apply there.",
+      "In my recent projects, including the ClickNTokk App and CNPRealstate App, I spearheaded mobile application development using React Native, focusing on creating intuitive user interfaces and robust feature implementations. I utilized Firebase for real-time data handling and Postman for efficient API testing, ensuring smooth integration and functionality across various platforms.My experience extends to web development, where I have applied React.js and JavaScript to build responsive, dynamic websites. I have also worked extensively with Git for version control, maintaining clean and organized codebases. Additionally, I have experience with Android Studio and the SDK, enabling me to manage mobile application development for Android platforms effectively.With a strong focus on innovation and user experience, I have continuously improved app performance and user engagement, particularly through the integration of Redux Toolkit and REST APIs. My work has consistently resulted in the delivery of high-quality, scalable applications that meet user needs and exceed expectations.I am passionate about leveraging my skills in React Native, React.js, and JavaScript to drive impactful mobile and web application development. I am always eager to collaborate on innovative projects and contribute to the creation of cutting-edge applications.",
     image:
       "https://user-images.githubusercontent.com/64485885/255237090-cf798a2c-1b41-4bb7-b904-b5353a1f08e8.png",
     tags: ["React Native", "JavaScript", "Axios"],
@@ -530,16 +532,16 @@ export const projects = [
   },
   {
     id: 7,
-    title: "Quiz App",
-    date: "Dec 2020 - Jan 2021",
+    title: "Azzir App",
+    date: "October 2022 - October 2023",
     description:
-      "A android quiz app made with Java and Firebase. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the quiz categories and can create a new quiz. It has a leaderboard where users can see the top 10 scorers. It has a search bar where users can search for a particular quiz.",
+      " Azzir is a mobile app developed to help users discover artists and upcoming events in nearby clubs. It features a user-friendly interface, advanced search filters, and supports various music genres like rock, hip-hop, and electronic. The app offers a curated list of events and allows users to view detailed artist lineups directly. Built using React Native for the frontend, the app's development focused on creating an intuitive user interface, implementing advanced search capabilities, integrating real-time updates, and optimizing backend performance to ensure a seamless and engaging user experience.",
     image:
       "https://github-production-user-asset-6210df.s3.amazonaws.com/64485885/239726262-c1b061d1-d9d0-42ef-9f1c-0412d14bc4f6.gif",
-    tags: ["Java", "Android Studio", "Firebase", "Google Auth"],
+    tags: ["React Native", "Android Studio", "Firebase", "Google Auth"],
     category: "android app",
     github: "https://github.com/rishavchanda/Quiz-Earn",
-    webapp: "https://github.com/rishavchanda/Quiz-Earn",
+    webapp: "https://play.google.com/store/apps/details?id=com.azzir",
   },
   {
     id: 8,
