@@ -9,7 +9,7 @@ export const Bio = {
     "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
   github: "https://github.com/rishavchanda",
   resume:
-    "https://drive.google.com/file/d/1ffZrcMcn8UatXGIaautbbqpV7ADNaETA/view?usp=sharing",
+    "https://drive.google.com/file/d/1mhx45BSGoGg-yz8_BrA9zkSVP1X2E5a5/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/sanjay-kumar-2a756916a/",
   twitter: "https://x.com/Sanjaykumar2455",
   insta: "https://www.instagram.com/sanjay_yadav7/",
@@ -296,17 +296,16 @@ export const education = [
   {
     "id": 0,
     // "img": "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/Kiit.jpeg?alt=media&token=3839d520-c59d-4341-ad8f-0980c98de4dd",
-    "img": "../components/assets/school.jpg",
     "school": "Dr. A.P.J. Abdul Kalam Technical University",
     "date": "July 2017 - Sep 2021",
     "grade": "7.53 CGPA",
     // "desc": "I completed my Bachelor's degree in Mechanical Engineering at Dr. A.P.J. Abdul Kalam Technical University. Throughout my academic journey, I studied core mechanical engineering subjects including Thermodynamics, Fluid Mechanics, Manufacturing Processes, Strength of Materials, Machine Design, and Heat Transfer. I also gained practical experience through various mechanical workshops and industrial projects, enhancing my understanding of mechanical systems and engineering principles. My coursework included both theoretical concepts and hands-on applications in mechanical design and analysis.",
-    "degree": "Bachelor of Technology - BTech, Mechanical Engineering"
+    "degree": "Bachelor of Technology - BTech, Mechanical Engineering",
+    "icon": "MdSchool"
   },
   {
     id: 1,
     // img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/methodist.png?alt=media&token=018a1b18-e2dd-4f34-8855-cff1b6b69fd3",
-    "img": "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/school-20-64.png",
     school: "Senior Secondary: SJ P Sharma Inter College, UP (Board)",
     date: "July 2013 - June 2015",
     grade: "76.8%",
@@ -315,7 +314,7 @@ export const education = [
   },
   {
     id: 2,
-    "img": "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/school-20-64.png",
+    "img": "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/school.jpg",
     school: "Lat Hari Prasad Singraur R.S. High School, UP (Board) ",
     date: "Apr 2013 - Apr 2015",
     grade: ": 74.5%",
