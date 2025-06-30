@@ -330,7 +330,7 @@ export const projects = [
     date: "Fab 2024 - Mar 2024",
     description:
       "Dashboard Design: Created a dynamic dashboard displaying total users and active/inactive users in a tabular format, integrating data visualization tools for better insights into user statistics and activity. Implemented functionalities to view, search, and filter users based on activity status, profile details, Block, Post Delete and post engagement, ensuring efficient user management and quick user activity location. KYC and Notifications: Integrated KYC status monitoring for compliance, automated notifications for KYC updates, and developed a robust notification system for real-time updates and seamless communication. Implemented secure login mechanisms with role-based access controls, ensuring data protection and user privacy through advanced security protocols. Support Module: Created a support module with integrated ticketing systems to assist users with queries, issues, and feedback, ensuring efficient issue resolution and user support.",
-    image:
+    projectCardsImages:
       "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/dummy.webp",
     tags: [
       "React Js",
@@ -351,8 +351,8 @@ export const projects = [
     date: "Fab 2024 - Mar 2024",
     description:
       "Developed a platform within the Suniyenetajee app that facilitates direct communication between politicians and the public, allowing users to voice concerns, provide feedback, and participate in discussions. Created a dedicated section to deliver timely and accurate political news and updates relevant to India, ensuring users stay informed on the latest developments. Designed and implemented promotional content and features to showcase the app's benefits, driving user engagement and encouraging downloads.",
-    image:
-      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/suniyenetajee.png",
+    projectCardsImages:
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/suniyenetajee.webp",
     tags: [
       "React Js",
       "REST APIs",
@@ -457,7 +457,7 @@ export const projects = [
       "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/clickntokk5.webp",
 
     ],
-    projectCardsImages: "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/clickntokk1.webp",
+    projectCardsImages: "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/clickntokk0.webp",
     tags: ["React Native", "REST APIs", "Redux", "Axios", "Postman", "JSON", "Firebase", "Google Cloude Console", "App Store", "Android Studio"],
     category: "android app",
     github: "https://play.google.com/store/apps/details?id=com.click_n_tokk",
