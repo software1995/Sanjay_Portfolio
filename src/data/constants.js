@@ -331,7 +331,7 @@ export const projects = [
     description:
       "Dashboard Design: Created a dynamic dashboard displaying total users and active/inactive users in a tabular format, integrating data visualization tools for better insights into user statistics and activity. Implemented functionalities to view, search, and filter users based on activity status, profile details, Block, Post Delete and post engagement, ensuring efficient user management and quick user activity location. KYC and Notifications: Integrated KYC status monitoring for compliance, automated notifications for KYC updates, and developed a robust notification system for real-time updates and seamless communication. Implemented secure login mechanisms with role-based access controls, ensuring data protection and user privacy through advanced security protocols. Support Module: Created a support module with integrated ticketing systems to assist users with queries, issues, and feedback, ensuring efficient issue resolution and user support.",
     image:
-      "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/dummy.webp",
     tags: [
       "React Js",
       "Redux Toolkit",
@@ -457,6 +457,7 @@ export const projects = [
       "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/clickntokk5.webp",
 
     ],
+    projectCardsImages: "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/clickntokk1.webp",
     tags: ["React Native", "REST APIs", "Redux", "Axios", "Postman", "JSON", "Firebase", "Google Cloude Console", "App Store", "Android Studio"],
     category: "android app",
     github: "https://play.google.com/store/apps/details?id=com.click_n_tokk",
@@ -481,6 +482,7 @@ export const projects = [
     date: "October 2022 - October 2023",
     description:
       " Azzir is a mobile app developed to help users discover artists and upcoming events in nearby clubs. It features a user-friendly interface, advanced search filters, and supports various music genres like rock, hip-hop, and electronic. The app offers a curated list of events and allows users to view detailed artist lineups directly. Built using React Native for the frontend, the app's development focused on creating an intuitive user interface, implementing advanced search capabilities, integrating real-time updates, and optimizing backend performance to ensure a seamless and engaging user experience.",
+    projectCardsImages: "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/Azzir0.webp",
 
     images: [
       "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/Azzir1.webp",
