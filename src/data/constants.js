@@ -330,6 +330,8 @@ export const projects = [
     date: "Fab 2024 - Mar 2024",
     description:
       "Dashboard Design: Created a dynamic dashboard displaying total users and active/inactive users in a tabular format, integrating data visualization tools for better insights into user statistics and activity. Implemented functionalities to view, search, and filter users based on activity status, profile details, Block, Post Delete and post engagement, ensuring efficient user management and quick user activity location. KYC and Notifications: Integrated KYC status monitoring for compliance, automated notifications for KYC updates, and developed a robust notification system for real-time updates and seamless communication. Implemented secure login mechanisms with role-based access controls, ensuring data protection and user privacy through advanced security protocols. Support Module: Created a support module with integrated ticketing systems to assist users with queries, issues, and feedback, ensuring efficient issue resolution and user support.",
+    image:
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/dummy.webp",
     projectCardsImages:
       "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/dummy.webp",
     tags: [
@@ -351,8 +353,9 @@ export const projects = [
     date: "Fab 2024 - Mar 2024",
     description:
       "Developed a platform within the Suniyenetajee app that facilitates direct communication between politicians and the public, allowing users to voice concerns, provide feedback, and participate in discussions. Created a dedicated section to deliver timely and accurate political news and updates relevant to India, ensuring users stay informed on the latest developments. Designed and implemented promotional content and features to showcase the app's benefits, driving user engagement and encouraging downloads.",
-    projectCardsImages:
-      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/suniyenetajee.webp",
+    image:
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/suniyenetajee.png",
+    projectCardsImages: "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/suniyenetajee.png",
     tags: [
       "React Js",
       "REST APIs",
@@ -471,6 +474,8 @@ export const projects = [
       "In my recent projects, including the ClickNTokk App and CNPRealstate App, I spearheaded mobile application development using React Native, focusing on creating intuitive user interfaces and robust feature implementations. I utilized Firebase for real-time data handling and Postman for efficient API testing, ensuring smooth integration and functionality across various platforms.My experience extends to web development, where I have applied React.js and JavaScript to build responsive, dynamic websites. I have also worked extensively with Git for version control, maintaining clean and organized codebases. Additionally, I have experience with Android Studio and the SDK, enabling me to manage mobile application development for Android platforms effectively.With a strong focus on innovation and user experience, I have continuously improved app performance and user engagement, particularly through the integration of Redux Toolkit and REST APIs. My work has consistently resulted in the delivery of high-quality, scalable applications that meet user needs and exceed expectations.I am passionate about leveraging my skills in React Native, React.js, and JavaScript to drive impactful mobile and web application development. I am always eager to collaborate on innovative projects and contribute to the creation of cutting-edge applications.",
     image:
       "https://user-images.githubusercontent.com/64485885/255237090-cf798a2c-1b41-4bb7-b904-b5353a1f08e8.png",
+    projectCardsImages:
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/dummy.webp",
     tags: ["React Native", "JavaScript", "Axios"],
     category: "android app",
     github: "https://github.com/rishavchanda/Job-finder-App",
