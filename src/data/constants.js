@@ -352,7 +352,7 @@ export const projects = [
     description:
       "Developed a platform within the Suniyenetajee app that facilitates direct communication between politicians and the public, allowing users to voice concerns, provide feedback, and participate in discussions. Created a dedicated section to deliver timely and accurate political news and updates relevant to India, ensuring users stay informed on the latest developments. Designed and implemented promotional content and features to showcase the app's benefits, driving user engagement and encouraging downloads.",
     image:
-      "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
+      "../components/assets/suniyenetajee.png",
     tags: [
       "React Js",
       "REST APIs",
