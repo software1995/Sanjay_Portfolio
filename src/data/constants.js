@@ -344,6 +344,7 @@ export const projects = [
     ],
     category: "web app",
     github: "https://github.com/rishavchanda/Trackify",
+    linkedin: "https://www.linkedin.com/in/sanjay-kumar-2a756916a/",
     webapp: "https://play.google.com/store/apps/details?id=com.click_n_tokk",
   },
 
@@ -366,6 +367,7 @@ export const projects = [
     ],
     category: "web app",
     github: "https://github.com/rishavchanda/Trackify",
+    linkedin: "https://www.linkedin.com/in/sanjay-kumar-2a756916a/",
     webapp: "https://suniyenetajee.com/",
   },
   // {
@@ -448,7 +450,7 @@ export const projects = [
   // },
   {
     id: 3,
-    title: "ClickNTokk",
+    title: "ClickNTokk App",
     date: "Fab 2024 - Mar 2024",
     description:
       "Frontend Development and Feature Implementation:- Spearheaded the creation of ClickNTokk using React Native,integrating a wide range of features such as video/photo sharing, messaging, voice communication, tagging, referrals,KYC, reels, comments, likes/dislikes, notifications, activity tracking, status updates, follow/unfollow, and advanced search functionalities. User Experience and Interface Design:-Designed a sleek, user-friendly interface with intuitive navigation, ensuring optimal performance across various devices for a consistent and engaging user experience Technology and Innovation: Utilized React Native for the frontend and Django with MongoDB for the backend to build robust systems supporting real-time interactions and secure data management. Enhanced user engagement with innovative elements like reels and advanced search capabilities.",
@@ -464,7 +466,8 @@ export const projects = [
     tags: ["React Native", "REST APIs", "Redux", "Axios", "Postman", "JSON", "Firebase", "Google Cloude Console", "App Store", "Android Studio"],
     category: "android app",
     github: "https://play.google.com/store/apps/details?id=com.click_n_tokk",
-    webapp: "https://play.google.com/store/apps/details?id=com.rishav.buckoid",
+    linkedin: "https://www.linkedin.com/in/sanjay-kumar-2a756916a/",
+    webapp: "https://play.google.com/store/apps/details?id=com.click_n_tokk",
   },
   {
     id: 10,
@@ -473,13 +476,14 @@ export const projects = [
     description:
       "In my recent projects, including the ClickNTokk App and CNPRealstate App, I spearheaded mobile application development using React Native, focusing on creating intuitive user interfaces and robust feature implementations. I utilized Firebase for real-time data handling and Postman for efficient API testing, ensuring smooth integration and functionality across various platforms.My experience extends to web development, where I have applied React.js and JavaScript to build responsive, dynamic websites. I have also worked extensively with Git for version control, maintaining clean and organized codebases. Additionally, I have experience with Android Studio and the SDK, enabling me to manage mobile application development for Android platforms effectively.With a strong focus on innovation and user experience, I have continuously improved app performance and user engagement, particularly through the integration of Redux Toolkit and REST APIs. My work has consistently resulted in the delivery of high-quality, scalable applications that meet user needs and exceed expectations.I am passionate about leveraging my skills in React Native, React.js, and JavaScript to drive impactful mobile and web application development. I am always eager to collaborate on innovative projects and contribute to the creation of cutting-edge applications.",
     image:
-      "https://user-images.githubusercontent.com/64485885/255237090-cf798a2c-1b41-4bb7-b904-b5353a1f08e8.png",
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/dummy.webp",
     projectCardsImages:
       "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/dummy.webp",
     tags: ["React Native", "JavaScript", "Axios"],
     category: "android app",
     github: "https://github.com/rishavchanda/Job-finder-App",
-    webapp: "https://github.com/rishavchanda/Job-finder-App",
+    linkedin: "https://www.linkedin.com/in/sanjay-kumar-2a756916a/",
+    // webapp: "https://github.com/rishavchanda/Job-finder-App",
   },
   {
     id: 7,
@@ -507,6 +511,7 @@ export const projects = [
     category: "android app",
     github: "https://github.com/rishavchanda/Quiz-Earn",
     webapp: "https://play.google.com/store/apps/details?id=com.azzir",
+    linkedin: "https://www.linkedin.com/in/sanjay-kumar-2a756916a/",
   },
 
 ];

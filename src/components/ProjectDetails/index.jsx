@@ -559,180 +559,180 @@ const Button = styled.a`
 `;
 
 const ProjectModal = ({ openModal, setOpenModal }) => {
-    const project = openModal?.project;
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [imagesArray, setImagesArray] = useState([]);
+  const project = openModal?.project;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [imagesArray, setImagesArray] = useState([]);
 
-    // Prepare images array when project changes
-    useEffect(() => {
-        if (project) {
-            // Create an array of all images
-            let allImages = [];
+  // Prepare images array when project changes
+  useEffect(() => {
+    if (project) {
+      // Create an array of all images
+      let allImages = [];
 
-            // Add main image if it exists
-            if (project.image) {
-                allImages.push(project.image);
-            }
+      // Add main image if it exists
+      if (project.image) {
+        allImages.push(project.image);
+      }
 
-            // Add additional images if they exist
-            if (project.images && Array.isArray(project.images)) {
-                allImages = [...allImages, ...project.images];
-            }
-            // If images is a string (a single image), add it
-            else if (project.images && typeof project.images === 'string') {
-                allImages.push(project.images);
-            }
+      // Add additional images if they exist
+      if (project.images && Array.isArray(project.images)) {
+        allImages = [...allImages, ...project.images];
+      }
+      // If images is a string (a single image), add it
+      else if (project.images && typeof project.images === 'string') {
+        allImages.push(project.images);
+      }
 
-            setImagesArray(allImages);
-            setCurrentIndex(0); // Reset to first image when project changes
-        }
-    }, [project]);
+      setImagesArray(allImages);
+      setCurrentIndex(0); // Reset to first image when project changes
+    }
+  }, [project]);
 
-    // Auto-advance slides
-    useEffect(() => {
-        if (imagesArray.length <= 1) return;
+  // Auto-advance slides
+  useEffect(() => {
+    if (imagesArray.length <= 1) return;
 
-        const interval = setInterval(() => {
-            setCurrentIndex(prevIndex =>
-                prevIndex === imagesArray.length - 1 ? 0 : prevIndex + 1
-            );
-        }, 5000); // Change slide every 5 seconds
+    const interval = setInterval(() => {
+      setCurrentIndex(prevIndex =>
+        prevIndex === imagesArray.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // Change slide every 5 seconds
 
-        return () => clearInterval(interval);
-    }, [imagesArray.length]);
+    return () => clearInterval(interval);
+  }, [imagesArray.length]);
 
-    const nextSlide = () => {
-        setCurrentIndex(prevIndex =>
-            prevIndex === imagesArray.length - 1 ? 0 : prevIndex + 1
-        );
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex(prevIndex =>
-            prevIndex === 0 ? imagesArray.length - 1 : prevIndex - 1
-        );
-    };
-
-    if (!project) return null;
-
-    return (
-        <Modal open={true} onClose={() => setOpenModal({ state: false, project: null })}>
-            <Container>
-                <Wrapper>
-                    <CloseRounded
-                        style={{
-                            position: "absolute",
-                            top: "10px",
-                            right: "20px",
-                            cursor: "pointer",
-                            zIndex: 10,
-                        }}
-                        onClick={() => setOpenModal({ state: false, project: null })}
-                    />
-
-                    {/* Image Carousel */}
-                    {imagesArray.length > 0 && (
-                        <>
-                            <CarouselContainer>
-                                <SlidesContainer currentIndex={currentIndex}>
-                                    {imagesArray.map((img, index) => (
-                                        <Slide key={index}>
-                                            <Image
-                                                src={img}
-                                                alt={`${project.title} - ${index}`}
-                                                onError={(e) => {
-                                                    e.target.onerror = null;
-                                                    e.target.src = 'https://via.placeholder.com/800x450/f5f5f5/999999/?text=Image+Not+Available';
-                                                }}
-                                            />
-                                        </Slide>
-                                    ))}
-                                </SlidesContainer>
-
-                                {/* Navigation Arrows (only show if multiple images) */}
-                                {imagesArray.length > 1 && (
-                                    <>
-                                        <Arrow direction="left" onClick={prevSlide}>
-                                            <ArrowBackIosNew style={{ color: 'white', fontSize: '20px' }} />
-                                        </Arrow>
-                                        <Arrow direction="right" onClick={nextSlide}>
-                                            <ArrowForwardIos style={{ color: 'white', fontSize: '20px' }} />
-                                        </Arrow>
-
-                                        {/* Dots Indicator */}
-                                        <DotsContainer>
-                                            {imagesArray.map((_, index) => (
-                                                <Dot
-                                                    key={index}
-                                                    active={currentIndex === index}
-                                                    onClick={() => setCurrentIndex(index)}
-                                                />
-                                            ))}
-                                        </DotsContainer>
-                                    </>
-                                )}
-                            </CarouselContainer>
-
-                            {/* Thumbnails - Small Size */}
-                            {imagesArray.length > 1 && (
-                                <ThumbnailsContainer>
-                                    {imagesArray.map((img, index) => (
-                                        <Thumbnail
-                                            key={index}
-                                            active={currentIndex === index}
-                                            onClick={() => setCurrentIndex(index)}
-                                        >
-                                            <ThumbnailImage
-                                                src={img}
-                                                active={currentIndex === index}
-                                                alt={`Thumbnail ${index}`}
-                                                onError={(e) => {
-                                                    e.target.onerror = null;
-                                                    e.target.src = 'https://via.placeholder.com/70x125/f5f5f5/999999/?text=Image';
-                                                }}
-                                            />
-                                        </Thumbnail>
-                                    ))}
-                                </ThumbnailsContainer>
-                            )}
-                        </>
-                    )}
-
-                    <Title>{project?.title}</Title>
-                    <Date>{project.date}</Date>
-                    <Tags>
-                        {project?.tags.map((tag, index) => (
-                            <Tag key={index}>{tag}</Tag>
-                        ))}
-                    </Tags>
-                    <Desc>{project?.description}</Desc>
-                    {project.member && (
-                        <>
-                            <Label>Members</Label>
-                            <Members>
-                                {project?.member.map((member, index) => (
-                                    <Member key={index}>
-                                        <MemberImage src={member.img} />
-                                        <MemberName>{member.name}</MemberName>
-                                        <a href={member.github} target="new" style={{ textDecoration: 'none', color: 'inherit' }}>
-                                            <GitHub />
-                                        </a>
-                                        <a href={member.linkedin} target="new" style={{ textDecoration: 'none', color: 'inherit' }}>
-                                            <LinkedIn />
-                                        </a>
-                                    </Member>
-                                ))}
-                            </Members>
-                        </>
-                    )}
-                    <ButtonGroup>
-                        <Button dull href={project?.github} target='new'>View Code</Button>
-                        <Button href={project?.webapp} target='new'>View Live App</Button>
-                    </ButtonGroup>
-                </Wrapper>
-            </Container>
-        </Modal>
+  const nextSlide = () => {
+    setCurrentIndex(prevIndex =>
+      prevIndex === imagesArray.length - 1 ? 0 : prevIndex + 1
     );
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex(prevIndex =>
+      prevIndex === 0 ? imagesArray.length - 1 : prevIndex - 1
+    );
+  };
+
+  if (!project) return null;
+
+  return (
+    <Modal open={true} onClose={() => setOpenModal({ state: false, project: null })}>
+      <Container>
+        <Wrapper>
+          <CloseRounded
+            style={{
+              position: "absolute",
+              top: "10px",
+              right: "20px",
+              cursor: "pointer",
+              zIndex: 10,
+            }}
+            onClick={() => setOpenModal({ state: false, project: null })}
+          />
+
+          {/* Image Carousel */}
+          {imagesArray.length > 0 && (
+            <>
+              <CarouselContainer>
+                <SlidesContainer currentIndex={currentIndex}>
+                  {imagesArray.map((img, index) => (
+                    <Slide key={index}>
+                      <Image
+                        src={img}
+                        alt={`${project.title} - ${index}`}
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = 'https://via.placeholder.com/800x450/f5f5f5/999999/?text=Image+Not+Available';
+                        }}
+                      />
+                    </Slide>
+                  ))}
+                </SlidesContainer>
+
+                {/* Navigation Arrows (only show if multiple images) */}
+                {imagesArray.length > 1 && (
+                  <>
+                    <Arrow direction="left" onClick={prevSlide}>
+                      <ArrowBackIosNew style={{ color: 'white', fontSize: '20px' }} />
+                    </Arrow>
+                    <Arrow direction="right" onClick={nextSlide}>
+                      <ArrowForwardIos style={{ color: 'white', fontSize: '20px' }} />
+                    </Arrow>
+
+                    {/* Dots Indicator */}
+                    <DotsContainer>
+                      {imagesArray.map((_, index) => (
+                        <Dot
+                          key={index}
+                          active={currentIndex === index}
+                          onClick={() => setCurrentIndex(index)}
+                        />
+                      ))}
+                    </DotsContainer>
+                  </>
+                )}
+              </CarouselContainer>
+
+              {/* Thumbnails - Small Size */}
+              {imagesArray.length > 1 && (
+                <ThumbnailsContainer>
+                  {imagesArray.map((img, index) => (
+                    <Thumbnail
+                      key={index}
+                      active={currentIndex === index}
+                      onClick={() => setCurrentIndex(index)}
+                    >
+                      <ThumbnailImage
+                        src={img}
+                        active={currentIndex === index}
+                        alt={`Thumbnail ${index}`}
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = 'https://via.placeholder.com/70x125/f5f5f5/999999/?text=Image';
+                        }}
+                      />
+                    </Thumbnail>
+                  ))}
+                </ThumbnailsContainer>
+              )}
+            </>
+          )}
+
+          <Title>{project?.title}</Title>
+          <Date>{project.date}</Date>
+          <Tags>
+            {project?.tags.map((tag, index) => (
+              <Tag key={index}>{tag}</Tag>
+            ))}
+          </Tags>
+          <Desc>{project?.description}</Desc>
+          {project.member && (
+            <>
+              <Label>Members</Label>
+              <Members>
+                {project?.member.map((member, index) => (
+                  <Member key={index}>
+                    <MemberImage src={member.img} />
+                    <MemberName>{member.name}</MemberName>
+                    <a href={member.github} target="new" style={{ textDecoration: 'none', color: 'inherit' }}>
+                      <GitHub />
+                    </a>
+                    <a href={member.linkedin} target="new" style={{ textDecoration: 'none', color: 'inherit' }}>
+                      <LinkedIn />
+                    </a>
+                  </Member>
+                ))}
+              </Members>
+            </>
+          )}
+          <ButtonGroup>
+            <Button dull href={project?.linkedin} target='new'>View Linkedin</Button>
+            <Button href={project?.webapp} target='new'>View Live App</Button>
+          </ButtonGroup>
+        </Wrapper>
+      </Container>
+    </Modal>
+  );
 };
 
 export default ProjectModal;
