@@ -212,7 +212,6 @@
 
 // export default ProjectImage;
 
-
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { imagesProject } from '../../data/constants';
@@ -223,10 +222,10 @@ const ProjectImage = () => {
     const containerRef = useRef(null);
     const [currentSetIndex, setCurrentSetIndex] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
-    const [animationType, setAnimationType] = useState('galaxy-shuffle'); // New default animation
+    const [animationType, setAnimationType] = useState('galaxy-shuffle');
     const [direction, setDirection] = useState(1);
 
-    // Mouse tracking for parallax effect
+    // Mouse tracking for parallax effect - scales with container size
     const [mouseX, setMouseX] = useState(0);
     const [mouseY, setMouseY] = useState(0);
 
@@ -234,50 +233,53 @@ const ProjectImage = () => {
     const totalSets = Math.ceil(totalImages / 3);
 
     // --- Animation Variants for the entire phone set ---
+    // Uses 'calc()' and percentage values for 'x' and 'y' to ensure responsiveness
     const setVariants = {
-        // New: Galaxy Shuffle Transition
         'galaxy-shuffle': {
             initial: {
                 opacity: 0,
                 scale: 0.7,
                 rotateY: direction > 0 ? -90 : 90,
-                x: direction > 0 ? '-100%' : '100%',
-                transition: { duration: 0.01 } // Very quick initial state to allow exit to start
+                x: direction > 0 ? 'calc(-50% - 100vw)' : 'calc(-50% + 100vw)', // Moves relative to viewport width
+                y: '-50%', // Centers vertically
+                transition: { duration: 0.01 }
             },
             animate: {
                 opacity: 1,
                 scale: 1,
                 rotateY: 0,
-                x: '0%',
+                x: '-50%', // Animates to center
+                y: '-50%',
                 transition: {
                     type: "spring",
                     stiffness: 70,
                     damping: 10,
                     mass: 0.8,
-                    delayChildren: 0.3, // Stagger children entry
+                    delayChildren: 0.3,
                     staggerChildren: 0.1
                 }
             },
             exit: {
                 opacity: 0,
-                scale: 1.2, // Briefly enlarge on exit
-                rotateY: direction > 0 ? 90 : -90, // Rotate away
-                x: direction > 0 ? '100%' : '-100%',
+                scale: 1.2,
+                rotateY: direction > 0 ? 90 : -90,
+                x: direction > 0 ? 'calc(-50% + 100vw)' : 'calc(-50% - 100vw)',
+                y: '-50%',
                 transition: {
                     type: "spring",
                     stiffness: 50,
                     damping: 8,
                     mass: 0.6,
                     staggerChildren: 0.05,
-                    staggerDirection: -1 // Stagger children exit in reverse order
+                    staggerDirection: -1
                 }
             },
         },
-        // Refined Slide 3D
         'slide-3d': {
             initial: {
                 opacity: 0,
-                x: direction > 0 ? '150%' : '-150%',
+                x: direction > 0 ? 'calc(-50% + 150%)' : 'calc(-50% - 150%)', // Relative to element's width
+                y: '-50%',
                 rotateY: direction > 0 ? 60 : -60,
                 z: -300,
                 filter: 'blur(8px)',
@@ -285,7 +287,8 @@ const ProjectImage = () => {
             },
             animate: {
                 opacity: 1,
-                x: '0%',
+                x: '-50%',
+                y: '-50%',
                 rotateY: 0,
                 z: 0,
                 filter: 'blur(0px)',
@@ -300,24 +303,28 @@ const ProjectImage = () => {
             },
             exit: {
                 opacity: 0,
-                x: direction > 0 ? '-150%' : '150%',
+                x: direction > 0 ? 'calc(-50% - 150%)' : 'calc(-50% + 150%)',
+                y: '-50%',
                 rotateY: direction > 0 ? -60 : 60,
                 z: -300,
                 filter: 'blur(8px)',
                 transition: { duration: 0.8, ease: "easeIn" }
             },
         },
-        // Refined Dynamic Flip
         'dynamic-flip': {
             initial: {
                 opacity: 0,
-                rotateX: direction > 0 ? 120 : -120, // More extreme flip
+                x: '-50%',
+                y: '-50%',
+                rotateX: direction > 0 ? 120 : -120,
                 scale: 0.6,
                 perspective: 1000,
                 filter: 'brightness(0.5)'
             },
             animate: {
                 opacity: 1,
+                x: '-50%',
+                y: '-50%',
                 rotateX: 0,
                 scale: 1,
                 filter: 'brightness(1)',
@@ -332,23 +339,29 @@ const ProjectImage = () => {
             },
             exit: {
                 opacity: 0,
+                x: '-50%',
+                y: '-50%',
                 rotateX: direction > 0 ? -120 : 120,
                 scale: 0.6,
                 filter: 'brightness(0.5)',
                 transition: { duration: 0.7, ease: "easeIn" }
             },
         },
-        // Refined Advanced Zoom Rotate
         'advanced-zoom-rotate': {
-            initial: { opacity: 0, scale: 0.2, rotate: direction > 0 ? -30 : 30, y: direction > 0 ? 200 : -200 },
+            initial: {
+                opacity: 0, scale: 0.2, rotate: direction > 0 ? -30 : 30,
+                x: '-50%',
+                y: direction > 0 ? 'calc(-50% + 200px)' : 'calc(-50% - 200px)' // Using fixed px here, consider vh for larger shifts if needed
+            },
             animate: {
                 opacity: 1,
                 scale: 1,
                 rotate: 0,
-                y: 0,
+                x: '-50%',
+                y: '-50%',
                 transition: {
                     type: "spring",
-                    stiffness: 100, // Make it a bit snappier
+                    stiffness: 100,
                     damping: 10,
                     mass: 0.7,
                     delayChildren: 0.2,
@@ -359,39 +372,55 @@ const ProjectImage = () => {
                 opacity: 0,
                 scale: 0.2,
                 rotate: direction > 0 ? 30 : -30,
-                y: direction > 0 ? -200 : 200,
+                x: '-50%',
+                y: direction > 0 ? 'calc(-50% - 200px)' : 'calc(-50% + 200px)',
                 transition: { duration: 0.6, ease: "easeIn" }
             },
         },
     };
 
     // --- Variants for individual phone appearance within a set ---
-    // Now with a subtle resting 'wobble'
+    // Scale values are percentages of their container, adapting automatically
     const phoneChildVariants = {
-        initial: { opacity: 0, y: 80, scale: 0.8, rotateX: 20 },
-        animate: {
+        initial: (index) => ({
+            opacity: 0,
+            y: 80, // Can consider 'vh' units here for larger devices, but px is often fine for small offsets
+            scale: index === 1 ? 0.9 : 0.7,
+            rotateX: 20
+        }),
+        animate: (index) => ({
             opacity: 1,
             y: 0,
-            scale: 1,
+            scale: index === 1 ? 1.05 : 0.85,
             rotateX: 0,
-            transition: { type: "spring", stiffness: 100, damping: 10, duration: 0.6 }
-        },
-        exit: { opacity: 0, y: -80, scale: 0.8, rotateX: -20, transition: { duration: 0.3 } },
-        // New: Resting state for subtle idle animation
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 10,
+                duration: 0.6
+            }
+        }),
+        exit: (index) => ({
+            opacity: 0,
+            y: -80,
+            scale: index === 1 ? 0.9 : 0.7,
+            rotateX: -20,
+            transition: { duration: 0.3 }
+        }),
         wobble: {
-            y: [0, -5, 0], // Subtle vertical drift
-            rotateZ: [0, 0.5, -0.5, 0], // Slight rotation
+            y: [0, -5, 0],
+            rotateZ: [0, 0.5, -0.5, 0],
             transition: {
                 duration: 8,
                 repeat: Infinity,
                 repeatType: "reverse",
                 ease: "easeInOut",
-                delay: Math.random() * 2 // Random delay for each phone
+                delay: Math.random() * 2
             }
         }
     };
 
-    // Intersection Observer
+    // Intersection Observer (No change, works universally)
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -411,13 +440,12 @@ const ProjectImage = () => {
         };
     }, []);
 
-
-    // Mouse tracking effect for parallax
+    // Mouse tracking effect for parallax (Normalization makes it responsive)
     useEffect(() => {
         const handleMouseMove = (event) => {
             if (containerRef.current) {
                 const { left, top, width, height } = containerRef.current.getBoundingClientRect();
-                const x = ((event.clientX - left) / width) * 2 - 1; // Normalize to -1 to 1
+                const x = ((event.clientX - left) / width) * 2 - 1;
                 const y = ((event.clientY - top) / height) * 2 - 1;
                 setMouseX(x);
                 setMouseY(y);
@@ -425,7 +453,7 @@ const ProjectImage = () => {
         };
 
         const handleMouseLeave = () => {
-            setMouseX(0); // Reset for smooth return to neutral
+            setMouseX(0);
             setMouseY(0);
         };
 
@@ -443,7 +471,7 @@ const ProjectImage = () => {
         };
     }, []);
 
-    // Auto-advance sets
+    // Auto-advance sets (No change, timing is absolute)
     useEffect(() => {
         let interval;
         if (isVisible && totalSets > 1) {
@@ -464,7 +492,7 @@ const ProjectImage = () => {
         for (let j = 0; j < 3; j++) {
             const imageIndex = startIndex + j;
             if (imageIndex < totalImages) {
-                setPhones.push({ src: project.images[imageIndex], index: imageIndex });
+                setPhones.push({ src: project.images[imageIndex], index: j });
             } else {
                 setPhones.push(null);
             }
@@ -496,9 +524,8 @@ const ProjectImage = () => {
 
     const currentPhones = getPhoneSet(currentSetIndex);
 
-    // Calculate parallax values
-    const parallaxX = mouseX * 30; // Stronger parallax effect
-    const parallaxY = mouseY * 20;
+    const parallaxOffsetX = mouseX * 30; // Parallax multiplier can be adjusted for different screen sizes if needed
+    const parallaxOffsetY = mouseY * 20;
 
     return (
         <div className="enhanced-gallery-container" ref={containerRef}>
@@ -512,27 +539,25 @@ const ProjectImage = () => {
                         animate="animate"
                         exit="exit"
                         custom={direction}
-                        // Apply parallax to the whole set
                         style={{
-                            x: parallaxX,
-                            y: parallaxY,
+                            translateX: parallaxOffsetX,
+                            translateY: parallaxOffsetY,
                         }}
                         transition={{
-                            // Smoothly animate parallax changes
-                            x: { type: "spring", stiffness: 100, damping: 20 },
-                            y: { type: "spring", stiffness: 100, damping: 20 },
+                            translateX: { type: "spring", stiffness: 100, damping: 20 },
+                            translateY: { type: "spring", stiffness: 100, damping: 20 },
                         }}
                     >
                         {currentPhones.map((phone, index) => (
                             phone && (
                                 <motion.div
-                                    key={phone.index}
+                                    key={`${currentSetIndex}-${phone.index}`}
                                     className={`phone-frame phone-${index}`}
                                     variants={phoneChildVariants}
                                     initial="initial"
-                                    animate={['animate', 'wobble']} // Animate to 'animate' and then continuously 'wobble'
+                                    animate={['animate', 'wobble']}
                                     exit="exit"
-                                // Stagger children within the set based on parent's staggered animation
+                                    custom={index}
                                 >
                                     <img
                                         src={phone.src}

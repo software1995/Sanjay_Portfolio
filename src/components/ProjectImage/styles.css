@@ -5,29 +5,30 @@
   padding: 5rem 2rem;
   background-color: #000;
   color: #fff;
-  position: relative; /* Crucial for positioning child elements (like phone-set) and for mouse tracking */
-  overflow: hidden; /* Keeps content within bounds during animations */
+  position: relative;
+  overflow: hidden;
 }
 
 .gallery-viewport {
   position: relative;
   min-height: 650px;
-  perspective: 2000px; /* Essential for 3D transforms like rotateY, rotateX, and z-translation */
-  transform-style: preserve-3d; /* Allows child elements to also be positioned in 3D space */
+  perspective: 2000px;
+  transform-style: preserve-3d;
 }
 
 .phone-set {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end; /* Align to bottom for scaled phones, often looks best */
   gap: 40px;
   width: 100%;
-  /* Position absolute is needed for the layering and 3D effects within the viewport */
   position: absolute;
-  /* Removed top/left and transform: translate(-50%, -50%). Framer Motion handles it. */
-  /* Framer Motion's 'x' and 'y' in variants will now include the -50% centering logic. */
-  /* Parallax will be applied on top of that. */
-  backface-visibility: hidden; /* Helps prevent flickering issues during 3D transformations */
+  /* --- CRITICAL CHANGE FOR CENTERING --- */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the absolute element */
+  /* --- END CRITICAL CHANGE --- */
+  backface-visibility: hidden;
 }
 
 .phone-frame {
@@ -36,16 +37,13 @@
   border-radius: 36px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-  
-  /* Keep only the non-animation transitions for hover effects. */
-  transition: box-shadow 0.3s ease; 
-  
-  transform-style: preserve-3d; /* Allows individual phones to have their own 3D transforms */
-  backface-visibility: hidden; /* Prevents the back face from showing when flipping */
+  transition: box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 
 .phone-frame:hover {
-  transform: translateY(-10px); /* This will apply on static hover, Framer Motion takes over during animation */
+  transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
 }
 
@@ -101,7 +99,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
   z-index: 10;
 }
 
@@ -126,7 +124,7 @@
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
 }
 
 .indicator.active {
@@ -149,7 +147,7 @@
   font-weight: 400;
 }
 
-/* Media Queries - remain the same */
+/* Media Queries - remain largely the same, minor adjustments for stacking */
 @media (max-width: 1200px) {
   .phone-set { gap: 30px; }
   .phone-frame { width: 250px; height: 520px; }
@@ -158,15 +156,58 @@
 @media (max-width: 992px) {
   .phone-set { gap: 20px; }
   .phone-frame { width: 220px; height: 460px; }
+  .gallery-viewport { min-height: 550px; }
+  .enhanced-gallery-container { padding: 4rem 1.5rem; }
 }
 
 @media (max-width: 768px) {
-  .phone-set { flex-direction: column; gap: 40px; }
-  .phone-frame { width: 280px; height: 580px; }
+  .phone-set {
+    flex-direction: column;
+    gap: 40px;
+    justify-content: flex-start; /* For column, align items to start */
+    align-items: center; /* Center the column itself */
+  }
+  .phone-frame {
+    width: 280px;
+    height: 580px;
+  }
+  .gallery-viewport {
+    min-height: 1000px; /* Adjust height for stacked phones */
+  }
+  .navigation-controls {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 60px;
+  }
+  .set-indicators {
+    order: 1;
+  }
+  .nav-button {
+    width: 50px;
+    height: 50px;
+  }
+  .set-counter {
+    top: 10px;
+    right: 10px;
+  }
 }
 
 @media (max-width: 480px) {
   .enhanced-gallery-container { padding: 3rem 1rem; }
   .phone-frame { width: 240px; height: 500px; }
+  .gallery-viewport { min-height: 900px; }
   .navigation-controls { gap: 15px; }
+  .nav-button { width: 45px; height: 45px; }
+}
+
+/* Landscape orientation for phones/small tablets */
+@media (max-height: 480px) and (max-width: 992px) {
+  .enhanced-gallery-container { padding: 2rem 1rem; }
+  .phone-set {
+    flex-direction: row; /* Prefer row for landscape if space allows */
+    gap: 15px;
+    /* You might need to adjust phone-frame widths/heights here specifically */
+    /* e.g., width: 180px; height: 380px; */
+  }
+  .gallery-viewport { min-height: 400px; }
 }
