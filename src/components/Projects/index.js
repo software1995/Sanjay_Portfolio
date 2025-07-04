@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Container, Wrapper, Title, Desc, CardContainer, ToggleButtonGroup, ToggleButton, Divider } from './ProjectsStyle'
 import ProjectCard from '../Cards/ProjectCards'
 import { projects } from '../../data/constants'
+import ProjectImage from '../ProjectImage'
 
 
 const Projects = ({ openModal, setOpenModal }) => {
@@ -10,6 +11,9 @@ const Projects = ({ openModal, setOpenModal }) => {
   return (
     <Container id="projects">
       <Wrapper>
+        <ProjectImage />
+
+
         <Title>Projects</Title>
         <Desc>
           I have worked on a wide range of projects. From web apps to android apps. Here are some of my projects.

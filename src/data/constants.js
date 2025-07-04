@@ -306,7 +306,7 @@ export const education = [
   {
     id: 1,
     // img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/methodist.png?alt=media&token=018a1b18-e2dd-4f34-8855-cff1b6b69fd3",
-    school: "Senior Secondary: SJ P Sharma Inter College, UP (Board)",
+    school: "Senior Secondary J P Sharma Inter College, UP (Board)",
     date: "July 2013 - June 2015",
     grade: "76.8%",
     desc: "I completed my class 12 high school education",
@@ -513,6 +513,33 @@ export const projects = [
     webapp: "https://play.google.com/store/apps/details?id=com.azzir",
     linkedin: "https://www.linkedin.com/in/sanjay-kumar-2a756916a/",
   },
+
+];
+
+
+// for images
+export const imagesProject = [
+  {
+    id: 0,
+    title: "ClickNTokk Admin Panel",
+    images: [
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/Azzir1.webp",
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/Azzir2.webp",
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/Azzir3.webp",
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/Azzir4.webp",
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/Azzir5.webp",
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/Azzir6.webp",
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/Azzir7.webp",
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/Azzir8.webp",
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/Azzir9.webp",
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/Azzir10.webp",
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/Azzir11.webp",
+      "https://raw.githubusercontent.com/software1995/Latest-Portfolio/master/src/components/assets/Azzir12.webp",
+    ],
+  },
+
+
+
 
 ];
 
