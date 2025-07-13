@@ -409,7 +409,7 @@ export const projects = [
   //     {
   //       name: "Sanjay Kumar",
   //       img: "https://avatars.githubusercontent.com/u/64485885?v=4",
-  //       linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
+  //       linkedin: "https://www.linkedin.com/in/sanjay-kumar-b89a791b3/",
   //       github: "https://github.com/rishavchanda/",
   //     },
   //     {
@@ -437,7 +437,7 @@ export const projects = [
   //     {
   //       name: "Sanjay Kumar",
   //       img: "https://avatars.githubusercontent.com/u/64485885?v=4",
-  //       linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
+  //       linkedin: "https://www.linkedin.com/in/sanjay-kumar-b89a791b3/",
   //       github: "https://github.com/rishavchanda/",
   //     },
   //     {
